@@ -94,13 +94,13 @@
             background-image: var(--hero-bg);
             background-size: cover;
             background-position: center;
-            opacity: 0.90;
+            opacity: 1;
         }
         .hero-opr::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, rgba(5, 18, 55, 0.95) 0%, rgba(7, 35, 94, 0.86) 28%, rgba(8, 67, 134, 0.58) 58%, rgba(8, 56, 112, 0.42) 100%);
+            background: linear-gradient(90deg, rgba(5, 18, 55, 0.88) 0%, rgba(7, 35, 94, 0.76) 28%, rgba(8, 67, 134, 0.42) 58%, rgba(8, 56, 112, 0.22) 100%);
         }
         .hero-opr-inner {
             position: relative;
@@ -109,29 +109,30 @@
         .hero-school-pill {
             display: inline-flex;
             align-items: center;
-            gap: 0.9rem;
-            background: rgba(10, 35, 92, 0.84);
-            border: 1px solid rgba(255,255,255,0.18);
-            border-radius: 1.2rem;
-            padding: 0.75rem 1rem;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 10px 26px rgba(2, 8, 23, 0.18);
+            gap: 1rem;
+            background: rgba(10, 35, 92, 0.92);
+            border: 1px solid rgba(255,255,255,0.20);
+            border-radius: 1.35rem;
+            padding: 0.95rem 1.35rem;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 12px 28px rgba(2, 8, 23, 0.22);
         }
         .hero-school-logo {
-            width: 60px;
-            height: 60px;
+            width: 72px;
+            height: 72px;
             border-radius: 9999px;
-            background: rgba(255,255,255,0.97);
-            padding: 0.3rem;
+            background: rgba(255,255,255,0.98);
+            padding: 0.35rem;
             object-fit: contain;
             flex-shrink: 0;
             box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
         }
         .hero-school-name {
-            letter-spacing: 0.02em;
-            line-height: 1.1;
+            letter-spacing: 0.015em;
+            line-height: 1.08;
             text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+            font-size: clamp(1.75rem, 2.8vw, 2.45rem);
         }
         .hero-school-caption {
             color: rgba(239, 246, 255, 0.9);
@@ -159,21 +160,34 @@
             max-width: 52rem;
         }
         .hero-nav-shell {
-            background: linear-gradient(180deg, rgba(9, 45, 94, 0.90), rgba(18, 87, 140, 0.82));
+            background: linear-gradient(180deg, rgba(9, 45, 94, 0.92), rgba(18, 87, 140, 0.84));
             border: 1px solid rgba(255,255,255,0.18);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-radius: 1.25rem;
+            border-radius: 1.4rem;
             box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
+            padding: 0.8rem !important;
+        }
+        .hero-nav-shell nav {
+            gap: 0.55rem !important;
+        }
+        .hero-nav-shell nav > button,
+        .hero-install-btn {
+            border-radius: 1rem !important;
+        }
+        @media (min-width: 768px) {
+            .hero-nav-shell {
+                max-width: 980px !important;
+            }
         }
         .hero-nav-btn-active {
-            background: rgba(255,255,255,0.98);
+            background: rgba(255,255,255,0.99);
             color: #0f3b82;
             box-shadow: 0 8px 22px rgba(255,255,255,0.18);
         }
         .hero-nav-btn-inactive {
-            color: rgba(239, 246, 255, 0.96);
-            background: rgba(255,255,255,0.08);
+            color: rgba(239, 246, 255, 0.97);
+            background: rgba(255,255,255,0.10);
         }
         .hero-nav-btn-inactive:hover {
             background: rgba(255,255,255,0.16);
@@ -216,18 +230,18 @@
     
         /* Header tanpa tajuk penerangan: ruang ilustrasi tidak ditindih teks. */
         .hero-opr-inner {
-            min-height: 365px;
+            min-height: 390px;
             display: flex;
             flex-direction: column;
             align-items: stretch;
             justify-content: space-between;
-            gap: 24px;
+            gap: 26px;
         }
         .hero-school-pill { max-width: 100%; }
         .hero-school-name { overflow-wrap: anywhere; }
         @media (max-width: 767px) {
-            .hero-opr-inner { min-height: 315px; gap: 24px; }
-            .hero-opr::before { background-position: 50% center; }
+            .hero-opr-inner { min-height: 338px; gap: 20px; }
+            .hero-opr::before { background-position: 58% center; }
             .hero-nav-shell { max-width: 100%; }
         }
 
