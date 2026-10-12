@@ -15,3 +15,6 @@ Fail untuk diterbitkan melalui GitHub Pages.
 - Lencana / ikon PWA: `https://iili.io/nVgEPhG.md.png`
 
 Lencana sekolah digunakan sebagai ikon PWA melalui URL imej yang dibekalkan.
+
+
+Versi ini telah dikemas kini dengan header utama menggunakan ilustrasi **SMART OPR GENERATOR** dan susun atur responsif untuk desktop serta mobile.

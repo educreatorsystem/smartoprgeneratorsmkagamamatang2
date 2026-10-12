@@ -1,8 +1,9 @@
-const CACHE_NAME = 'opr-smk-agama-matang-2-v1-20261012';
+const CACHE_NAME = 'opr-smk-agama-matang-2-v3-header-20261012';
 const APP_SHELL = [
   './',
   './index.html',
-  './manifest.webmanifest'
+  './manifest.webmanifest',
+  './smart-opr-header.png'
 ];
 
 self.addEventListener('install', (event) => {

@@ -80,42 +80,145 @@
                 display: none !important;
             }
         }
+    
+        .hero-opr {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            background: linear-gradient(135deg, #0b3b8f 0%, #0ea5e9 45%, #22d3ee 100%);
+            box-shadow: 0 14px 40px rgba(2, 8, 23, 0.18);
+        }
+        .hero-opr::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: var(--hero-bg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.96;
+        }
+        .hero-opr::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(8, 25, 67, 0.82) 0%, rgba(15, 44, 110, 0.62) 36%, rgba(16, 93, 146, 0.20) 100%);
+        }
+        .hero-opr-inner {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-brand-card {
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.22);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+        }
+        .hero-school-logo {
+            width: 86px;
+            height: 86px;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.96);
+            padding: 0.4rem;
+            object-fit: contain;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+        }
+        .hero-school-title {
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+        }
+        .hero-school-subtitle {
+            color: rgba(239, 246, 255, 0.92);
+        }
+        .hero-nav-shell {
+            background: linear-gradient(135deg, rgba(8, 47, 73, 0.72), rgba(15, 118, 185, 0.55));
+            border: 1px solid rgba(255,255,255,0.18);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+        }
+        .hero-nav-btn-active {
+            background: rgba(255,255,255,0.98);
+            color: #0f3b82;
+            box-shadow: 0 8px 22px rgba(255,255,255,0.22);
+        }
+        .hero-nav-btn-inactive {
+            color: rgba(239, 246, 255, 0.96);
+            background: rgba(255,255,255,0.08);
+        }
+        .hero-nav-btn-inactive:hover {
+            background: rgba(255,255,255,0.16);
+            color: #fff;
+        }
+        .hero-install-btn {
+            background: rgba(16, 185, 129, 0.92);
+            color: white;
+            box-shadow: 0 10px 24px rgba(16, 185, 129, 0.28);
+        }
+        .hero-install-btn:hover { background: rgba(5, 150, 105, 0.98); }
+        @media (max-width: 767px) {
+            .hero-opr::after {
+                background: linear-gradient(180deg, rgba(8,25,67,0.78) 0%, rgba(14,68,126,0.52) 45%, rgba(9, 56, 87, 0.82) 100%);
+            }
+            .hero-brand-card {
+                background: linear-gradient(180deg, rgba(7, 42, 84, 0.42), rgba(14, 62, 105, 0.22));
+            }
+            .hero-nav-shell {
+                background: linear-gradient(180deg, rgba(8, 40, 73, 0.78), rgba(13, 78, 120, 0.72));
+            }
+            .hero-school-logo {
+                width: 72px;
+                height: 72px;
+            }
+        }
+
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
 
     <!-- Header Utama -->
-    <header class="bg-gradient-to-r from-brand-900 via-brand-800 to-brand-900 text-white shadow-lg sticky top-0 z-40 no-print">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
-            <div class="flex items-center space-x-3">
-                <img src="https://iili.io/nVgEPhG.md.png" alt="Lencana SMK AGAMA MATANG 2" class="h-12 w-auto bg-white p-1 rounded-full shadow-md object-contain" onerror="this.src='https://placehold.co/100x100/0284c7/fff?text=SMKAM2'">
-                <div>
-                    <h1 class="font-extrabold text-lg sm:text-xl tracking-wide leading-tight">SMK AGAMA MATANG 2</h1>
-                    <p class="text-xs text-brand-100 font-light">Sistem Penjana Laporan Ringkas & Kalendar Aktiviti Tahunan</p>
+    <header class="hero-opr no-print" style="--hero-bg: url('./smart-opr-header.png');">
+        <div class="hero-opr-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6 lg:py-7">
+            <div class="grid lg:grid-cols-[minmax(0,1.12fr)_minmax(280px,0.88fr)] gap-4 lg:gap-6 items-end">
+                <div class="hero-brand-card p-4 sm:p-5 lg:p-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+                        <img src="https://iili.io/nVgEPhG.md.png" alt="Lencana SMK AGAMA MATANG 2" class="hero-school-logo" onerror="this.src='https://placehold.co/140x140/ffffff/0f3b82?text=LOGO'">
+                        <div class="min-w-0">
+                            <h1 class="hero-school-title font-extrabold text-2xl sm:text-3xl lg:text-4xl leading-tight">SMK AGAMA MATANG 2</h1>
+                            <p class="hero-school-subtitle text-sm sm:text-base lg:text-lg font-medium mt-1">Sistem Penjana Laporan Ringkas &amp; Kalendar Aktiviti Tahunan</p>
+                            <p class="text-[11px] sm:text-xs text-sky-100/90 mt-2">Bina laporan OPR dengan lebih pantas, simpan rekod program, serta semak kalendar aktiviti dalam satu paparan yang moden dan teratur.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-brand-card p-4 sm:p-5 flex flex-col gap-3 lg:items-end">
+                    <div class="w-full hero-nav-shell p-2 sm:p-2.5">
+                        <div class="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+                            <nav class="grid grid-cols-1 sm:grid-cols-3 gap-2 flex-1">
+                                <button id="tabFormBtn" onclick="switchTab('form')" class="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-active">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                    <span>Bina Laporan</span>
+                                </button>
+                                <button id="tabListBtn" onclick="switchTab('list')" class="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
+                                    <i class="fa-solid fa-folder-open"></i>
+                                    <span>Lihat Laporan</span>
+                                    <span id="reportCountBadge" class="bg-brand-500 text-white text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
+                                </button>
+                                <button id="tabCalendarBtn" onclick="switchTab('calendar')" class="px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <span>Kalendar Program</span>
+                                </button>
+                            </nav>
+                            <button id="pwaInstallBtn" type="button" onclick="installPWA()" class="hidden w-full sm:w-auto px-3.5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 items-center justify-center gap-2 hero-install-btn" title="Pasang aplikasi pada peranti">
+                                <i class="fa-solid fa-download"></i>
+                                <span>Pasang Aplikasi</span>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Tab Navigation -->
-            <nav class="flex bg-brand-900/60 p-1 rounded-xl border border-brand-700/50 flex-wrap gap-1">
-                <button id="tabFormBtn" onclick="switchTab('form')" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-white text-brand-900 shadow">
-                    <i class="fa-solid fa-pen-to-square"></i>
-                    <span>Bina Laporan</span>
-                </button>
-                <button id="tabListBtn" onclick="switchTab('list')" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-brand-100 hover:text-white transition-all duration-200 flex items-center gap-2">
-                    <i class="fa-solid fa-folder-open"></i>
-                    <span>Lihat Laporan</span>
-                    <span id="reportCountBadge" class="bg-brand-500 text-white text-xs px-2 py-0.5 rounded-full font-bold">0</span>
-                </button>
-                <button id="tabCalendarBtn" onclick="switchTab('calendar')" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold text-brand-100 hover:text-white transition-all duration-200 flex items-center gap-2">
-                    <i class="fa-solid fa-calendar-days"></i>
-                    <span>Kalendar Program</span>
-                </button>
-            </nav>
-
-                <button id="pwaInstallBtn" type="button" onclick="installPWA()" class="hidden px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold bg-emerald-500 hover:bg-emerald-600 text-white transition-all duration-200 items-center gap-2 shadow" title="Pasang aplikasi pada peranti">
-                    <i class="fa-solid fa-download"></i>
-                    <span>Pasang Aplikasi</span>
-                </button>
         </div>
     </header>
 
@@ -1747,7 +1850,102 @@
                             justify-content: space-between;
                             background: #ffffff;
                         }
-                    </style>
+                    
+        .hero-opr {
+            position: relative;
+            overflow: hidden;
+            color: white;
+            background: linear-gradient(135deg, #0b3b8f 0%, #0ea5e9 45%, #22d3ee 100%);
+            box-shadow: 0 14px 40px rgba(2, 8, 23, 0.18);
+        }
+        .hero-opr::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: var(--hero-bg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.96;
+        }
+        .hero-opr::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(8, 25, 67, 0.82) 0%, rgba(15, 44, 110, 0.62) 36%, rgba(16, 93, 146, 0.20) 100%);
+        }
+        .hero-opr-inner {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-brand-card {
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.22);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.16);
+        }
+        .hero-school-logo {
+            width: 86px;
+            height: 86px;
+            border-radius: 9999px;
+            background: rgba(255,255,255,0.96);
+            padding: 0.4rem;
+            object-fit: contain;
+            flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+        }
+        .hero-school-title {
+            letter-spacing: 0.02em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.18);
+        }
+        .hero-school-subtitle {
+            color: rgba(239, 246, 255, 0.92);
+        }
+        .hero-nav-shell {
+            background: linear-gradient(135deg, rgba(8, 47, 73, 0.72), rgba(15, 118, 185, 0.55));
+            border: 1px solid rgba(255,255,255,0.18);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+        }
+        .hero-nav-btn-active {
+            background: rgba(255,255,255,0.98);
+            color: #0f3b82;
+            box-shadow: 0 8px 22px rgba(255,255,255,0.22);
+        }
+        .hero-nav-btn-inactive {
+            color: rgba(239, 246, 255, 0.96);
+            background: rgba(255,255,255,0.08);
+        }
+        .hero-nav-btn-inactive:hover {
+            background: rgba(255,255,255,0.16);
+            color: #fff;
+        }
+        .hero-install-btn {
+            background: rgba(16, 185, 129, 0.92);
+            color: white;
+            box-shadow: 0 10px 24px rgba(16, 185, 129, 0.28);
+        }
+        .hero-install-btn:hover { background: rgba(5, 150, 105, 0.98); }
+        @media (max-width: 767px) {
+            .hero-opr::after {
+                background: linear-gradient(180deg, rgba(8,25,67,0.78) 0%, rgba(14,68,126,0.52) 45%, rgba(9, 56, 87, 0.82) 100%);
+            }
+            .hero-brand-card {
+                background: linear-gradient(180deg, rgba(7, 42, 84, 0.42), rgba(14, 62, 105, 0.22));
+            }
+            .hero-nav-shell {
+                background: linear-gradient(180deg, rgba(8, 40, 73, 0.78), rgba(13, 78, 120, 0.72));
+            }
+            .hero-school-logo {
+                width: 72px;
+                height: 72px;
+            }
+        }
+
+    </style>
                 </head>
                 <body class="bg-white">
                     <div class="a4-page">
