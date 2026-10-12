@@ -18,3 +18,6 @@ Lencana sekolah digunakan sebagai ikon PWA melalui URL imej yang dibekalkan.
 
 
 Versi ini telah dikemas kini dengan header utama menggunakan ilustrasi **SMART OPR GENERATOR** dan susun atur responsif untuk desktop serta mobile.
+
+
+Kemas kini: header hanya menunjukkan lencana sekolah, nama sekolah dan tab. Tajuk besar dan semua teks penerangan telah dibuang.

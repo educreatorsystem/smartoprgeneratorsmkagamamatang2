@@ -213,46 +213,52 @@
         }
 
 
+    
+        /* Header tanpa tajuk penerangan: ruang ilustrasi tidak ditindih teks. */
+        .hero-opr-inner {
+            min-height: 365px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            justify-content: space-between;
+            gap: 24px;
+        }
+        .hero-school-pill { max-width: 100%; }
+        .hero-school-name { overflow-wrap: anywhere; }
+        @media (max-width: 767px) {
+            .hero-opr-inner { min-height: 315px; gap: 24px; }
+            .hero-opr::before { background-position: 50% center; }
+            .hero-nav-shell { max-width: 100%; }
+        }
+
     </style>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans min-h-screen flex flex-col">
 
-    <!-- Header Utama -->
+    <!-- Header utama: lencana, nama sekolah dan tab sahaja. Ilustrasi asal dikekalkan. -->
     <header class="hero-opr no-print" style="--hero-bg: url('./smart-opr-header.png');">
-        <div class="hero-opr-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-5 sm:pt-6 pb-6 sm:pb-8 lg:pb-10">
-            <div class="hero-school-pill mb-5 sm:mb-6 max-w-max">
+        <div class="hero-opr-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 sm:py-6">
+            <div class="hero-school-pill max-w-max">
                 <img src="https://iili.io/nVgEPhG.md.png" alt="Lencana SMK AGAMA MATANG 2" class="hero-school-logo" onerror="this.src='https://placehold.co/140x140/ffffff/0f3b82?text=LOGO'">
-                <div class="min-w-0">
-                    <div class="hero-school-name font-extrabold text-lg sm:text-2xl">SMK AGAMA MATANG 2</div>
-                    <div class="hero-school-caption text-xs sm:text-sm font-medium">Sistem Penjana Laporan Ringkas (OPR) &amp; Kalendar Aktiviti Tahunan</div>
-                </div>
+                <h1 class="hero-school-name font-extrabold text-lg sm:text-2xl">SMK AGAMA MATANG 2</h1>
             </div>
 
-            <div class="hero-copy-wrap">
-                <h1 class="hero-main-heading">SMART OPR<br>GENERATOR</h1>
-                <p class="hero-main-subheading mt-2 sm:mt-3">Bina laporan, simpan rekod program dan semak kalendar aktiviti dengan lebih tersusun.</p>
-                            </div>
-
-            <div class="mt-6 sm:mt-7 hero-nav-shell p-3 sm:p-4 max-w-5xl">
-                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-2.5">
-                    <button id="tabFormBtn" onclick="switchTab('form')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-active">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <span>Bina Laporan</span>
+            <div class="hero-nav-shell p-3 sm:p-4 max-w-5xl w-full mt-8">
+                <nav aria-label="Navigasi utama" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                    <button type="button" id="tabFormBtn" onclick="switchTab('form')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-active">
+                        <i class="fa-solid fa-pen-to-square"></i><span>Bina Laporan</span>
                     </button>
-                    <button id="tabListBtn" onclick="switchTab('list')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
-                        <i class="fa-solid fa-folder-open"></i>
-                        <span>Lihat Laporan</span>
+                    <button type="button" id="tabListBtn" onclick="switchTab('list')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
+                        <i class="fa-solid fa-folder-open"></i><span>Lihat Laporan</span>
                         <span id="reportCountBadge" class="bg-brand-500 text-white text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                     </button>
-                    <button id="tabCalendarBtn" onclick="switchTab('calendar')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
-                        <i class="fa-solid fa-calendar-days"></i>
-                        <span>Kalendar Program</span>
+                    <button type="button" id="tabCalendarBtn" onclick="switchTab('calendar')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
+                        <i class="fa-solid fa-calendar-days"></i><span>Kalendar Program</span>
                     </button>
-                    <button id="pwaInstallBtn" type="button" onclick="installPWA()" class="hidden px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 items-center justify-center gap-2 hero-install-btn" title="Pasang aplikasi pada peranti">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Pasang Aplikasi</span>
-                    </button>
-                </div>
+                </nav>
+                <button id="pwaInstallBtn" type="button" onclick="installPWA()" class="hidden mt-2.5 w-full px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 items-center justify-center gap-2 hero-install-btn" title="Pasang aplikasi pada peranti">
+                    <i class="fa-solid fa-download"></i><span>Pasang Aplikasi</span>
+                </button>
             </div>
         </div>
     </header>
