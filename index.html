@@ -93,14 +93,15 @@
             inset: 0;
             background-image: var(--hero-bg);
             background-size: cover;
-            background-position: center;
+            background-position: center center;
+            background-repeat: no-repeat;
             opacity: 1;
         }
         .hero-opr::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(90deg, rgba(5, 18, 55, 0.88) 0%, rgba(7, 35, 94, 0.76) 28%, rgba(8, 67, 134, 0.42) 58%, rgba(8, 56, 112, 0.22) 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(7, 34, 78, 0.10) 100%);
         }
         .hero-opr-inner {
             position: relative;
@@ -109,30 +110,30 @@
         .hero-school-pill {
             display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            background: rgba(10, 35, 92, 0.92);
-            border: 1px solid rgba(255,255,255,0.20);
-            border-radius: 1.35rem;
-            padding: 0.95rem 1.35rem;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            box-shadow: 0 12px 28px rgba(2, 8, 23, 0.22);
+            gap: 0.9rem;
+            background: rgba(10, 35, 92, 0.84);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 1.2rem;
+            padding: 0.8rem 1.15rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 10px 24px rgba(2, 8, 23, 0.18);
         }
         .hero-school-logo {
-            width: 72px;
-            height: 72px;
+            width: 60px;
+            height: 60px;
             border-radius: 9999px;
             background: rgba(255,255,255,0.98);
-            padding: 0.35rem;
+            padding: 0.32rem;
             object-fit: contain;
             flex-shrink: 0;
-            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.16);
         }
         .hero-school-name {
             letter-spacing: 0.015em;
             line-height: 1.08;
             text-shadow: 0 2px 10px rgba(0,0,0,0.18);
-            font-size: clamp(1.75rem, 2.8vw, 2.45rem);
+            font-size: clamp(1.35rem, 2.1vw, 1.95rem);
         }
         .hero-school-caption {
             color: rgba(239, 246, 255, 0.9);
@@ -160,20 +161,20 @@
             max-width: 52rem;
         }
         .hero-nav-shell {
-            background: linear-gradient(180deg, rgba(9, 45, 94, 0.92), rgba(18, 87, 140, 0.84));
+            background: linear-gradient(180deg, rgba(9, 45, 94, 0.88), rgba(18, 87, 140, 0.80));
             border: 1px solid rgba(255,255,255,0.18);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 1.4rem;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);
-            padding: 0.8rem !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 1.2rem;
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+            padding: 0.6rem !important;
         }
         .hero-nav-shell nav {
-            gap: 0.55rem !important;
+            gap: 0.45rem !important;
         }
         .hero-nav-shell nav > button,
         .hero-install-btn {
-            border-radius: 1rem !important;
+            border-radius: 0.9rem !important;
         }
         @media (min-width: 768px) {
             .hero-nav-shell {
@@ -230,18 +231,18 @@
     
         /* Header tanpa tajuk penerangan: ruang ilustrasi tidak ditindih teks. */
         .hero-opr-inner {
-            min-height: 390px;
+            min-height: clamp(320px, 34vw, 470px);
             display: flex;
             flex-direction: column;
             align-items: stretch;
             justify-content: space-between;
-            gap: 26px;
+            gap: 18px;
         }
         .hero-school-pill { max-width: 100%; }
         .hero-school-name { overflow-wrap: anywhere; }
         @media (max-width: 767px) {
-            .hero-opr-inner { min-height: 338px; gap: 20px; }
-            .hero-opr::before { background-position: 58% center; }
+            .hero-opr-inner { min-height: 280px; gap: 14px; }
+            .hero-opr::before { background-position: center center; }
             .hero-nav-shell { max-width: 100%; }
         }
 
@@ -257,20 +258,20 @@
                 <h1 class="hero-school-name font-extrabold text-lg sm:text-2xl">SMK AGAMA MATANG 2</h1>
             </div>
 
-            <div class="hero-nav-shell p-3 sm:p-4 max-w-5xl w-full mt-8">
-                <nav aria-label="Navigasi utama" class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
-                    <button type="button" id="tabFormBtn" onclick="switchTab('form')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-active">
+            <div class="hero-nav-shell p-2.5 sm:p-3 max-w-4xl w-full mt-5">
+                <nav aria-label="Navigasi utama" class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                    <button type="button" id="tabFormBtn" onclick="switchTab('form')" class="px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 hero-nav-btn-active">
                         <i class="fa-solid fa-pen-to-square"></i><span>Bina Laporan</span>
                     </button>
-                    <button type="button" id="tabListBtn" onclick="switchTab('list')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
+                    <button type="button" id="tabListBtn" onclick="switchTab('list')" class="px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 hero-nav-btn-inactive">
                         <i class="fa-solid fa-folder-open"></i><span>Lihat Laporan</span>
                         <span id="reportCountBadge" class="bg-brand-500 text-white text-[11px] px-2 py-0.5 rounded-full font-bold">0</span>
                     </button>
-                    <button type="button" id="tabCalendarBtn" onclick="switchTab('calendar')" class="px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 hero-nav-btn-inactive">
+                    <button type="button" id="tabCalendarBtn" onclick="switchTab('calendar')" class="px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 flex items-center justify-center gap-1.5 hero-nav-btn-inactive">
                         <i class="fa-solid fa-calendar-days"></i><span>Kalendar Program</span>
                     </button>
                 </nav>
-                <button id="pwaInstallBtn" type="button" onclick="installPWA()" class="hidden mt-2.5 w-full px-3.5 py-3 rounded-xl text-sm font-semibold transition-all duration-200 items-center justify-center gap-2 hero-install-btn" title="Pasang aplikasi pada peranti">
+                <button id="pwaInstallBtn" type="button" onclick="installPWA()" class="hidden mt-2 w-full px-3 py-2.5 rounded-xl text-[13px] font-semibold transition-all duration-200 items-center justify-center gap-1.5 hero-install-btn" title="Pasang aplikasi pada peranti">
                     <i class="fa-solid fa-download"></i><span>Pasang Aplikasi</span>
                 </button>
             </div>
