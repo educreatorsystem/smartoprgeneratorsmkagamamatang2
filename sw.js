@@ -1,4 +1,4 @@
-const CACHE_NAME = 'opr-smk-agama-matang-2-v4-header-kemas-20261012';
+const CACHE_NAME = 'opr-smk-agama-matang-2-v5-header-jelas-20261012';
 const APP_SHELL = [
   './',
   './index.html',
